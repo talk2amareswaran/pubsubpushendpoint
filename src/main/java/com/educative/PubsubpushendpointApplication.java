@@ -47,14 +47,14 @@ public class PubsubpushendpointApplication {
 	
 	List<Message> messageList = new ArrayList<>();
 	
-	@RequestMapping(value="/messages", method=RequestMethod.POST)
+	@RequestMapping(value="/", method=RequestMethod.POST)
 	public ResponseEntity<Object> messagesEndpoint() {
 		Message message = getMessage();
 		messageList.add(message);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/messages", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ResponseEntity<Object> messages() {
 		return new ResponseEntity<>(messageList, HttpStatus.OK);
 	}
